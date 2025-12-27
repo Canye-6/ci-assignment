@@ -1,0 +1,13 @@
+name: CI-Skip-Docs
+
+on:
+  push:
+    paths-ignore:
+      - README.md
+
+jobs:
+  skip-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Code change detected. CI executed."
