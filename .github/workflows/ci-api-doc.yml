@@ -1,13 +1,19 @@
-name: CI-Smoke-Test
+name: CI-API-Docs
 
 on: [push]
 
 jobs:
-  smoke:
+  api-docs:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      - run: python app.py
+
+      - name: Generate API documentation
+        run: |
+          pydoc api > api_documentation.txt
+
