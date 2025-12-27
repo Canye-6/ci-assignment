@@ -1,12 +1,12 @@
-def add(a, b):
-    return a + b
+from api import get_status
 
 
 def main():
-    result = add(2, 3)
-    print(f"Result: {result}")
+    status = get_status()
+    print(f"System status: {status}")
 
 
 if __name__ == "__main__":
     main()
-print("Hello CI Assignment")
+
+
